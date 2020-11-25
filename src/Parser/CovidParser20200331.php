@@ -58,14 +58,14 @@ class CovidParser20200331 extends AbstractSiteParser
             $samples = new NumericValue($arrayIterator->current()->innerHtml());
 
             $tr = $domDied->find('tr.views-row-last')->toArray()[0];
-            $numberOfDeathCases = $tr->find('td.views-field-field-elhunytak-sorszam')->toArray()[0]->innerHtml();
+            $numberOfDeathCases = new NumericValue($tr->find('td.views-field-field-elhunytak-sorszam')->toArray()[0]->innerHtml());
 
             return new SiteContent(
                 $infected->getValue(),
                 $healed->getValue(),
                 $lockDown->getValue(),
                 $samples->getValue(),
-                $numberOfDeathCases
+                $numberOfDeathCases->getValue()
             );
         } catch (GuzzleException $exception) {
             throw $exception;
