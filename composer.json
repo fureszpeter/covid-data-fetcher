@@ -1,0 +1,25 @@
+{
+    "name": "furesz/covid-data-checker",
+    "description": "Hungarian official site fetcher (through archive.org)",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+      {
+          "name": "Furesz Peter",
+          "email": "fureszpeter@gmail.com"
+      }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "CovidDataFetcher\\": "src/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.4"
+    }
+}
