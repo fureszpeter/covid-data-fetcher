@@ -10,6 +10,7 @@ use DateTime;
 use DateTimeImmutable;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\Utils;
 
 class WaybackService
 {
@@ -83,6 +84,6 @@ class WaybackService
 
         $body = (string) $response->getBody();
 
-        return \GuzzleHttp\json_decode($body, true);
+        return Utils::jsonDecode($body, true);
     }
 }
